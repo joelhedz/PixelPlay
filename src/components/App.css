@@ -2,13 +2,15 @@
     display: flex;
     align-items: center;
     height: 100%;
+    margin-left: 10%;
     
 }
 .tamaño-imagen{
-    width: 70%;
+    width: 100%;
     height: 100%;
     margin-left: 80px;
-
+    border-radius: 5%;
+    margin-top: 3px;
 }
 
 .estilo-profile{
@@ -28,11 +30,47 @@
     padding: 15px;
     border-width: 0px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cajaTexto:focus{
-    outline: 1px solid rgb(145, 178, 240);
-    box-shadow: 0 0 20px rgb(145, 178, 240);
+    outline: 1px solid rgb(247, 146, 146);
+    box-shadow: 0 0 20px rgb(247, 146, 146);
 }
 
+.btnform{
+    background-color: #f86868da;
+    border-color: rgb(98, 119, 141);
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+.texto{
+    font-size: 20px;
+    color: slategray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+}
+
+.btnswitch{
+    background-color: rgba(54, 54, 248, 0.582);
+    border-radius: 30px;
+    padding: 8px;
+    border-width: 0px;
+    color: white;
+    font-size: 16px;
+
+}
+
+
+.diagonal-gradient {
+    background: linear-gradient(to bottom right, rgba(5, 30, 248, 0.308), rgba(255, 0, 43, 0.836));
+    width: 100%;
+    height: 1000px;
+    
+    
+}
