@@ -1,0 +1,38 @@
+.padre{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+}
+.tamaño-imagen{
+    width: 70%;
+    height: 100%;
+    margin-left: 80px;
+
+}
+
+.estilo-profile{
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: auto;
+    margin-top:  auto;
+    margin-bottom: 50px;
+}
+
+.cajaTexto{
+    background-color: #cccccc13;
+    border-color: rgb(98, 119, 141);
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cajaTexto:focus{
+    outline: 1px solid rgb(145, 178, 240);
+    box-shadow: 0 0 20px rgb(145, 178, 240);
+}
+

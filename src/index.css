@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Padre{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
