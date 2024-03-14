@@ -20,6 +20,8 @@ module.exports = {
     ],
     'no-unused-vars': 'warn',
     "space-before-function-paren": "off",
-    "indent": "off"
+    "indent": "off",
+    //missing in provs validation
+    "react/prop-types": "off",
   },
 }
