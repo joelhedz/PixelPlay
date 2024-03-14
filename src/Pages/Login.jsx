@@ -34,7 +34,6 @@ const Login = () => {
     }
   }
 
-  console.log(VideoFondo)
   return (
     <div>
       <div className="VIDEOFONDO">
@@ -42,47 +41,44 @@ const Login = () => {
           <source src={VideoFondo} type="video/mp4" />
         </video>
       </div>
-
       <div
-        className="row vh-100 justify-content-center align-items-center"
+        className="flex h-screen justify-center items-center "
         style={{ zIndex: '100' }}
       >
-        <div className=" col-s-4 col-md-5 col-lg-5 col-xl-6">
-          <div className="padre">
+        <div className="w-full sm:w-1/2 md:w-2/3 lg:w-3/4 xl:w-4/5">
+          <div className="padre p-28">
             <img src={ImagenProfile} alt="" className="estilo-profile" />
             <form onSubmit={funcAutetication}>
-              <div className="row align-items-center">
-                <div className="Entradas">
-                  <input
-                    type="email"
-                    placeholder="Ingresar Email"
-                    className="cajaTexto"
-                    id="email"
-                    required
-                  />
-                  <input
-                    type="password"
-                    placeholder="Ingresar contraseña"
-                    className="cajaTexto"
-                    id="password"
-                    required
-                  />
+              <div className="flex flex-col">
+                <input
+                  type="email"
+                  placeholder="Ingresar Email"
+                  className="mt-4 p-2 border border-gray-300 rounded-md"
+                  id="email"
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Ingresar contraseña"
+                  className="mt-4 p-2 border border-gray-300 rounded-md"
+                  id="password"
+                  required
+                />
 
-                  <button className="btnform">
-                    {registrando ? 'Registrate' : 'Inicia sesion'}
-                  </button>
-                </div>
+                <button className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                  {registrando ? 'Registrate' : 'Inicia sesion'}
+                </button>
               </div>
             </form>
 
-            <h4 className="texto">
-              {registrando ? 'si ya tiene cuenta' : '¿No tienes cuenta?'}
+            <h4 className="mt-4 text-white">
+              {registrando ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
               &nbsp;&nbsp;&nbsp;
               <button
-                className="btnswitch"
+                className="text-blue-500 hover:text-blue-700"
                 onClick={() => setRegistrando(!registrando)}
               >
-                {registrando ? 'Inicia sesion' : 'registrate'}
+                {registrando ? 'Inicia sesion' : 'Registrarse'}
               </button>
             </h4>
           </div>

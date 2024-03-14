@@ -11,9 +11,3 @@
   transition: background-color 1s ease-in-out;
   position: fixed;
 }
-
-.Padre {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}

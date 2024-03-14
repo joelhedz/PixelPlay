@@ -18,10 +18,7 @@ function App() {
     }
   })
 
-  return(
-    {usuario ? <Home/> : <Login/>}
-  ) 
-  
+  return usuario ? <Home /> : <Login />
 }
 
 export default App
