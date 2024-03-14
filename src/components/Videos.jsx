@@ -2,8 +2,10 @@ import { URL_YOUTUBE } from '../services/URL'
 import UrlVideo from '../services/ObtenerIdVideo'
 
 export default function Mostarvideo({ urlVideo, width, height }) {
-  const Video = UrlVideo({ url: urlVideo })
-
+  const Video = UrlVideo({
+    url: 'https://api.themoviedb.org/3/movie/1011985/videos?language=es-ES'
+  })
+  console.log(Video)
   return (
     <>
       {Video && (

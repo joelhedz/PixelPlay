@@ -20,7 +20,7 @@ function UrlVideo({ url }) {
   const video = movies[0]
 
   if (!video) return <div>No se encontró video</div>
-
+  console.log(video)
   return video
 }
 

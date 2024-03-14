@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="w-9/12">
           <ul className="flex gap-10 mx-[10%] justify-end">
             <LisMenu href={'/'}>Inicio</LisMenu>
-            <LisMenu href={'/'}>Series</LisMenu>
+            <LisMenu href={'../Pages/Series.jsx'}>Series</LisMenu>
             <LisMenu href={'/'}>Peliculas</LisMenu>
             <li className="group">
               <button
