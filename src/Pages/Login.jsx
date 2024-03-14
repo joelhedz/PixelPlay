@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ImagenProfile from '../assets/profile.png'
 import VideoFondo from '../assets/video.mp4'
-import './App.css'
+import '../../public/css/Login.css'
 import appFirebase from '../credenciales'
 import {
   getAuth,

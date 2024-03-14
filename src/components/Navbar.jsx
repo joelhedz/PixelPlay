@@ -1,17 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
+import appFirebase from '../credenciales'
+import { getAuth, signOut } from 'firebase/auth'
 
-function LisMenu({ children }) {
+const auth = getAuth(appFirebase)
+
+function LisMenu({ children, href }) {
   return (
     <li className="text-white font-[500] text-[20px] hover:text-gray-300">
-      <a href="#">{children}</a>
+      <a href={`${href}`}>{children}</a>
     </li>
   )
 }
 
 export default function Navbar() {
   const [scrolling, setScrolling] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +29,15 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  const handleMouseLeave = () => {
+    const menu = document.getElementById('dropdown-menu')
+    const button = document.getElementById('dropdown-button')
+
+    button.addEventListener('mouseleave', handleMouseLeave)
+    menu.addEventListener('mouseleave', handleMouseLeave)
+  }
+
   return (
     <nav
       className={`w-full transition bg-gradient-to-b from-gray-900 to-transparent duration-500 ease-in-out delay-150 ${
@@ -42,16 +56,38 @@ export default function Navbar() {
         </div>
         <div className="w-9/12">
           <ul className="flex gap-10 mx-[10%] justify-end">
-            <LisMenu>Inicio</LisMenu>
-            <LisMenu>Series</LisMenu>
-            <LisMenu>Peliculas</LisMenu>
-            <li>
-              <a href="#">
+            <LisMenu href={'/'}>Inicio</LisMenu>
+            <LisMenu href={'/'}>Series</LisMenu>
+            <LisMenu href={'/'}>Peliculas</LisMenu>
+            <li className="group">
+              <button
+                onMouseEnter={() => setIsOpen(true)}
+                className="flex items-center"
+                id="dropdown-button"
+              >
                 <FontAwesomeIcon
                   className="text-red-600 w-6 h-auto"
                   icon={faUser}
                 />
-              </a>
+              </button>
+              {isOpen && (
+                <ul
+                  id="dropdown-menu"
+                  className="absolute mt-2 bg-[rgba(0,0,0,0.84)] text-white border rounded shadow-md"
+                  onMouseEnter={() => setIsOpen(true)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <li className="p-2">
+                    <a href="#">Etiqueta 1</a>
+                  </li>
+                  <li className="p-2">
+                    <a href="#">Etiqueta 2</a>
+                  </li>
+                  <li className="p-2">
+                    <button onClick={() => signOut(auth)}>Cerrar sesión</button>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>

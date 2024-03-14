@@ -55,7 +55,7 @@ export default function Index() {
           <section>
             <Titulo name={'Peliculas Populares'} />
             <br />
-            <CenterMode movies={Movies} />
+            <CenterMode movies={Populares} />
           </section>
 
           <section className="mt-14">
