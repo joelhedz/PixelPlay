@@ -5,7 +5,7 @@ import Mostarvideo from './Videos'
 export function Estreno({ movie }) {
   const IdMovie =
     movie[0] && movie[0].id ? VideoPelicula({ idMovie: movie[0].id }) : null
-  console.log(IdMovie)
+
   return (
     <div>
       {movie.map(m => (

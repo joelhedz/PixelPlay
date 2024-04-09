@@ -41,12 +41,10 @@ const Login = () => {
           <source src={VideoFondo} type="video/mp4" />
         </video>
       </div>
-      <div
-        className="flex h-screen justify-center items-center "
-        style={{ zIndex: '100' }}
-      >
-        <div className="w-full sm:w-1/2 md:w-2/3 lg:w-3/4 xl:w-4/5">
-          <div className="padre p-28">
+
+      <div className="h-screen w-screen ">
+        <div className="padre h-full  flex items-center justify-center">
+          <div className=" md:w-2/3 lg:w-3/4 xl:w-5/12 p-28 m-0 bg-[rgba(0,0,0,0.8)]">
             <img src={ImagenProfile} alt="" className="estilo-profile" />
             <form onSubmit={funcAutetication}>
               <div className="flex flex-col">

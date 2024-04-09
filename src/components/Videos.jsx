@@ -1,24 +1,25 @@
 import { URL_YOUTUBE } from '../services/URL'
-import UrlVideo from '../services/ObtenerIdVideo'
+import { useVideo } from '../hooks/useVideo'
 
 export default function Mostarvideo({ urlVideo, width, height }) {
-  const Video = UrlVideo({
-    url: 'https://api.themoviedb.org/3/movie/1011985/videos?language=es-ES'
+  const Video = useVideo({
+    url: urlVideo
   })
-  console.log(Video)
+  if (!Video || Video.length === 0) {
+    return null
+  }
+
   return (
     <>
-      {Video && (
-        <div key={Video.id}>
-          <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            width={`${width}`}
-            height={`${height}`}
-            src={`${URL_YOUTUBE}${Video.key}`}
-            title={`${Video.name}`}
-          />
-        </div>
-      )}
+      <div key={Video[0].id}>
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          width={`${width}`}
+          height={`${height}`}
+          src={`${URL_YOUTUBE}${Video[0].key}`}
+          title={`${Video[0].name}`}
+        />
+      </div>
     </>
   )
 }
